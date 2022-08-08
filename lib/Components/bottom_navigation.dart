@@ -1,4 +1,4 @@
-import 'package:flaterlat01/Page/akun.dart';
+import 'package:flaterlat01/Pages/akun.dart';
 import 'package:flaterlat01/main.dart';
 import 'package:flaterlat01/tes.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flaterlat01/Component/bottom_navigation.dart';
+import 'package:flaterlat01/Components/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 // import 'tes.dart';
 
