@@ -12,9 +12,9 @@ class _AkunPageState extends State<AkunPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Akun"),
+        title: const Text("Akun"),
       ),
-      body: Text("ini Halaman Akun"),
+      body: const Text("ini Halaman Akun"),
     );
   }
 }

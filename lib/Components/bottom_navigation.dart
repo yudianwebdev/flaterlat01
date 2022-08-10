@@ -1,4 +1,5 @@
 import 'package:flaterlat01/Pages/akun.dart';
+import 'package:flaterlat01/Pages/setwallpaper.dart';
 import 'package:flaterlat01/main.dart';
 import 'package:flaterlat01/tes.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
       // ignore: prefer_const_literals_to_create_immutables
       children: <Widget>[
         const HomePage(),
-        const AkunPage(),
+        const SetWallpaper(),
         const Tess(),
         const HomePage(),
         const AkunPage(),
