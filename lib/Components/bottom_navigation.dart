@@ -1,4 +1,5 @@
 import 'package:flaterlat01/Pages/akun.dart';
+import 'package:flaterlat01/Pages/listwallpaper.dart';
 import 'package:flaterlat01/Pages/setwallpaper.dart';
 import 'package:flaterlat01/main.dart';
 import 'package:flaterlat01/tes.dart';
@@ -36,8 +37,24 @@ class _BottomNavigationState extends State<BottomNavigation> {
         const HomePage(),
         const SetWallpaper(),
         const Tess(),
-        const HomePage(),
-        const AkunPage(),
+        const ListWallpaper(),
+        const ListWallpaper2(),
+      ],
+    );
+  }
+
+  Widget buildTitleView() {
+    return PageView(
+      controller: pageController,
+      onPageChanged: (index) {
+        _changeSelectedNavBar(index);
+      },
+      children: const <Widget>[
+        Text("Home"),
+        Text("Home1"),
+        Text("Home2"),
+        Text("Home3"),
+        Text("Home4")
       ],
     );
   }
@@ -45,6 +62,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("tesxt"),
+      ),
       body: buildPageView(),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
