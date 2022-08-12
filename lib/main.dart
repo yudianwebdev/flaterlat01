@@ -1,10 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:flaterlat01/Components/AdsBanner.dart';
 import 'package:flaterlat01/Components/bottom_navigation.dart';
+import 'package:flaterlat01/Pages/listwallpaper.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 // import 'tes.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
   runApp(const CumaText());
 }
 
@@ -92,9 +97,48 @@ class CumaText extends StatefulWidget {
 }
 
 class _CumaTextState extends State<CumaText> {
+  late AdWidget adWidget;
+
   @override
+  void initState() {
+    super.initState();
+    myBanner.load();
+    adWidget = AdWidget(ad: myBanner);
+    // Load ads.
+  }
+
+  final BannerAd myBanner = BannerAd(
+    adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+    size: AdSize.banner,
+    request: AdRequest(),
+    listener: BannerAdListener(),
+  );
+
+  final BannerAdListener listener = BannerAdListener(
+    // Called when an ad is successfully received.
+    // ignore: avoid_print
+    onAdLoaded: (Ad ad) => print('Ad loaded.'),
+    // Called when an ad request failed.
+    onAdFailedToLoad: (Ad ad, LoadAdError error) {
+      // Dispose the ad here to free resources.
+      ad.dispose();
+      // ignore: avoid_print
+      print('Ad failed to load: $error');
+    },
+    // Called when an ad opens an overlay that covers the screen.
+    // ignore: avoid_print
+    onAdOpened: (Ad ad) => print('Ad opened.'),
+    // Called when an ad removes an overlay that covers the screen.
+    // ignore: avoid_print
+    onAdClosed: (Ad ad) => print('Ad closed.'),
+    // Called when an impression occurs on the ad.
+    // ignore: avoid_print
+    onAdImpression: (Ad ad) => print('Ad impression.'),
+  );
+
+  // ignore: annotate_overrides
   Widget build(BuildContext context) {
-    return MaterialApp(home: BottomNavigation());
+    return MaterialApp(home: Scaffold(body: BottomNavigation()));
   }
 }
 

@@ -1,3 +1,4 @@
+import 'package:flaterlat01/Components/AdsBanner.dart';
 import 'package:flutter/material.dart';
 import 'package:wallpaper/wallpaper.dart';
 
@@ -21,7 +22,7 @@ class ListWallpaper extends StatelessWidget {
                     fit: BoxFit.fitWidth,
                   ),
                   Column(
-                    children: [Text("Asdf")],
+                    children: const [Text("Asdf")],
                   ),
                 ],
               )),
@@ -64,8 +65,10 @@ class _ListWallpaper2State extends State<ListWallpaper2> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            AdsBanner(),
             ListView(
               shrinkWrap: true,
+              // ignore: prefer_const_constructors
               physics: NeverScrollableScrollPhysics(),
               children: images.map(
                 (data) {
@@ -117,6 +120,7 @@ class _ListWallpaper2State extends State<ListWallpaper2> {
             ),
             ListView(
               shrinkWrap: true,
+              // ignore: prefer_const_constructors
               physics: NeverScrollableScrollPhysics(),
               children: images.map(
                 (data) {
