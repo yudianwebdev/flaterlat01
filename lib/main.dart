@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flaterlat01/Components/AdsBanner.dart';
+import 'package:flaterlat01/Components/WebView.dart';
 import 'package:flaterlat01/Components/bottom_navigation.dart';
 import 'package:flaterlat01/Pages/listwallpaper.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
-  runApp(const CumaText());
+  runApp(const WebViewPage());
 }
 
 class MyApp extends StatefulWidget {
