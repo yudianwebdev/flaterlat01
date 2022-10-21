@@ -72,7 +72,13 @@ class NfcTestState extends State<NfcTest> {
     // ignore: avoid_print
     print("object");
     NfcManager.instance.startSession(onDiscovered: (NfcTag tag) async {
-      result.value = tag.data;
+      result.value = tag.data["isodep"]["identifier"]
+          .map((e) => e.toRadixString(16).padLeft(2, '0'))
+          .join('');
+      ;
+      // ^ menampilkan ID(reversed hex)// UID lah ya apa lagi.
+      // ignore: avoid_print
+      print('object:${tag.data.toString()}');
       NfcManager.instance.stopSession();
     });
   }
