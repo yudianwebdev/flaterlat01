@@ -2,6 +2,7 @@
 
 import 'package:flaterlat01/Components/AdsBanner.dart';
 import 'package:flaterlat01/Components/bottom_navigation.dart';
+import 'package:flaterlat01/Pages/http_test_api.dart';
 import 'package:flaterlat01/Pages/listwallpaper.dart';
 import 'package:flaterlat01/nfctest.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
-  runApp(NfcTest());
+  runApp(HttpTestApi());
 }
 
 class MyApp extends StatefulWidget {
